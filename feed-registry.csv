@@ -1,0 +1,11 @@
+name,url,type,ingestion_method,license,initial_trust_score,vetting_notes
+CISA Advisories,https://www.cisa.gov/uscert/ncas/alerts,api/rss,HTTP/RSS,public,95,"Official CISA/US-CERT advisories; high confidence for vuln/campaign advisories"
+Abuse.ch - MalwareBazaar,https://bazaar.abuse.ch/,api,API/JSON,public,85,"MalwareBazaar metadata feed; metadata-only in public context"
+Abuse.ch - URLhaus,https://urlhaus.abuse.ch/,api,API/JSON,public,80,"URLhaus malicious URL feed; useful for domain/URL indicators"
+Abuse.ch - ThreatFox,https://threatfox.abuse.ch/,api,API/JSON,public,75,"ThreatFox infra metadata; community-sourced"
+AlienVault OTX,https://otx.alienvault.com/,api,REST/API (may require API key),community,70,"Community pulses; useful corroboration but variable noise"
+Public MISP instances,https://www.circl.lu/misp/ (example),stix/misp,STIX/MISP export,community,70,"Community MISP feeds; vet per instance for quality"
+Shadowserver,https://www.shadowserver.org/,csv/feeds,HTTP/CSV,public,65,"Internet-wide telemetry; good enrichment source"
+Censys,https://censys.io/,api,REST/API (public metadata),public,65,"Certificate/host scanning metadata for infra mapping"
+VirusTotal (metadata),https://www.virustotal.com/,api,REST (cached),restricted-free,80,"Use metadata only; respect rate limits and TOS"
+MITRE ATT&CK,https://attack.mitre.org/,reference,static/reference,public,100,"Canonical TTP mapping resource; reference dataset"
