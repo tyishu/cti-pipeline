@@ -1,0 +1,64 @@
+{
+  "id": "domain:bad.example.com",
+  "type": "indicator",
+  "observable_type": "domain",
+  "value": "bad.example.com",
+  "first_seen": "2025-08-28T08:00:00Z",
+  "last_seen": "2025-08-29T12:00:00Z",
+  "normalized_on": "2025-08-30T10:05:00Z",
+  "sources": [
+    {
+      "name": "malwarebazaar (metadata)",
+      "feed_id": "mb-20250828-011",
+      "url": "https://bazaar.abuse.ch/",
+      "confidence": 80,
+      "retrieved_at": "2025-08-30T09:50:00Z",
+      "original_timestamp": "2025-08-28T08:00:00Z",
+      "notes": "metadata-only; sanitized"
+    }
+  ],
+  "confidence": 80,
+  "score": 84.2,
+  "tags": ["dga-like", "malicious-domain"],
+  "evidence": [
+    {
+      "kind": "analysis",
+      "report_id": "manual-20250830-01",
+      "summary": "Fast-flux behaviour observed in a passive-DNS snapshot."
+    }
+  ],
+  "provenance": {
+    "raw_id": "mb-20250828-011",
+    "raw_payload_ref": "private-vault:mb-011",
+    "parser_version": "v0.1"
+  },
+  "diamond": {
+    "diamond_id": "diamond-20250828-0002",
+    "adversary": {
+      "name": "suspected-APT-EXAMPLE",
+      "aliases": ["APT-EX"],
+      "confidence": 35,
+      "references": ["https://sample-vendor-report.example/suspected-aptex"]
+    },
+    "capability": {
+      "type": "malware",
+      "name": "ExampleStealer",
+      "techniques": ["T1059", "T1041"],
+      "evidence": ["suspicious-post-activity"]
+    },
+    "infrastructure": {
+      "ips": ["198.51.100.25"],
+      "domains": ["bad.example.com"],
+      "asn": 64512,
+      "first_seen": "2025-08-28T08:00:00Z"
+    },
+    "victim": {
+      "org": "ExampleBank",
+      "asset_tags": ["custody-api"],
+      "relevance": 0.95
+    },
+    "observed_time": "2025-08-28T09:15:00Z",
+    "confidence": 72,
+    "provenance": ["malwarebazaar:mb-20250828-011"]
+  }
+}
