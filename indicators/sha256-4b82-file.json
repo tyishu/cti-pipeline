@@ -1,0 +1,64 @@
+{
+  "id": "file:sha256:4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+  "type": "artifact",
+  "observable_type": "file",
+  "value": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+  "first_seen": "2025-08-27T07:45:00Z",
+  "last_seen": "2025-08-27T07:45:00Z",
+  "normalized_on": "2025-08-30T10:10:00Z",
+  "sources": [
+    {
+      "name": "VirusTotal (metadata, cached)",
+      "feed_id": "vt-20250827-01",
+      "url": "https://www.virustotal.com/",
+      "confidence": 85,
+      "retrieved_at": "2025-08-30T09:45:00Z",
+      "original_timestamp": "2025-08-27T07:45:00Z",
+      "notes": "metadata-only; sanitized"
+    }
+  ],
+  "confidence": 85,
+  "score": 88.9,
+  "tags": ["trojan", "dropper"],
+  "evidence": [
+    {
+      "kind": "static",
+      "report_id": "static-20250830-01",
+      "summary": "Static strings consistent with loader behaviour (sanitized)."
+    }
+  ],
+  "provenance": {
+    "raw_id": "vt-20250827-01",
+    "raw_payload_ref": "private-vault:vt-12345",
+    "parser_version": "v0.1"
+  },
+  "diamond": {
+    "diamond_id": "diamond-20250827-0003",
+    "adversary": {
+      "name": "Unknown",
+      "aliases": [],
+      "confidence": 20,
+      "references": []
+    },
+    "capability": {
+      "type": "malware",
+      "name": "ExampleLoader",
+      "techniques": ["T1059", "T1105"],
+      "evidence": ["static-strings"]
+    },
+    "infrastructure": {
+      "ips": [],
+      "domains": ["bad.example.com"],
+      "asn": null,
+      "first_seen": "2025-08-27T07:45:00Z"
+    },
+    "victim": {
+      "org": "ExampleBank (sanitized)",
+      "asset_tags": ["web-tier"],
+      "relevance": 0.6
+    },
+    "observed_time": "2025-08-27T07:45:00Z",
+    "confidence": 65,
+    "provenance": ["virustotal:vt-20250827-01"]
+  }
+}
