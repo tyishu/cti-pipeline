@@ -1,0 +1,64 @@
+{
+  "id": "ip:198.51.100.25",
+  "type": "indicator",
+  "observable_type": "ip",
+  "value": "198.51.100.25",
+  "first_seen": "2025-08-29T11:00:00Z",
+  "last_seen": "2025-08-29T11:00:00Z",
+  "normalized_on": "2025-08-30T10:00:00Z",
+  "sources": [
+    {
+      "name": "abuse.ch - threatfox",
+      "feed_id": "tf-20250829-0001",
+      "url": "https://threatfox.abuse.ch/",
+      "confidence": 70,
+      "retrieved_at": "2025-08-30T09:58:00Z",
+      "original_timestamp": "2025-08-29T11:00:00Z",
+      "notes": "sanitized vendor metadata"
+    }
+  ],
+  "confidence": 70,
+  "score": 76.5,
+  "tags": ["malware-c2", "observed-beaconing"],
+  "evidence": [
+    {
+      "kind": "feed",
+      "report_id": "tf-20250829-0001",
+      "summary": "C2 endpoint reported in vendor metadata (sanitized)."
+    }
+  ],
+  "provenance": {
+    "raw_id": "tf-20250829-0001",
+    "raw_payload_ref": "private-vault:mb-1234",
+    "parser_version": "v0.1"
+  },
+  "diamond": {
+    "diamond_id": "diamond-20250829-0001",
+    "adversary": {
+      "name": "unknown",
+      "aliases": ["uncertain-actor"],
+      "confidence": 20,
+      "references": []
+    },
+    "capability": {
+      "type": "malware",
+      "name": "unknown-loader",
+      "techniques": ["T1071.001"],
+      "evidence": ["observed-beaconing"]
+    },
+    "infrastructure": {
+      "ips": ["198.51.100.25"],
+      "domains": ["bad.example.com"],
+      "asn": 64512,
+      "first_seen": "2025-08-29T11:00:00Z"
+    },
+    "victim": {
+      "org": "ExampleBank (sanitized)",
+      "asset_tags": ["hft-demo"],
+      "relevance": 0.8
+    },
+    "observed_time": "2025-08-29T11:00:00Z",
+    "confidence": 60,
+    "provenance": ["abuse.ch:tf-20250829-0001"]
+  }
+}
